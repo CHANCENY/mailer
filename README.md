@@ -145,19 +145,6 @@ $mail_manager->addEnvelope($envelope)->processEnvelopes();
 
 ---
 
-## Files Overview
-
-### `Envelope.php`
-Handles the creation and management of email envelopes, including subject, body, and recipients.
-
-### `MailManager.php`
-Manages the sending of emails. Responsible for processing envelopes and communicating with the SMTP server.
-
-### `ServerSettings.php`
-Defines the configuration for SMTP server settings.
-
----
-
 ## License
 
 Specify the license details here.

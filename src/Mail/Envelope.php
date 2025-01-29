@@ -23,10 +23,7 @@ class Envelope
 
    public function __construct()
    {
-       $this->headers = [
-           'Content-Type' => 'text/html; charset=UTF-8',
-           'Content-Transfer-Encoding' => 'utf-8',
-       ];
+       $this->headers = [];
        $this->params = [
            'subject' => '',
            'body' => '',
@@ -186,6 +183,7 @@ class Envelope
            foreach($this->attachments as $attachment) {
                $mail->addAttachment($attachment['content'], $attachment['name']);
            }
+
 
            // Add custom headers
            foreach ($this->headers as $name => $value) {

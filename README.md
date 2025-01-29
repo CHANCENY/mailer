@@ -130,6 +130,17 @@ $mail_manager2->addEnvelope($envelope2);
 
 $result = $mail_manager->processEnvelopes();
 $mail_manager2->processEnvelopes();
+
+$envelope = \Simp\Mail\Mail\Envelope::create('Lorem ipsum dolor sit amet ', 'Lorem ipsum dolor sit amet consectetur');
+$envelope->addToAddresses(['exp1@gmail.com','exp2@gmail.com']);
+$envelope->addCcAddresses(['exp3@gmail.com','exp4@gmail.com']);
+$envelope->addBccAddresses(['exp5@gmail.com','exp6@gmail.com']);
+
+// Add Attachment
+$envelope->addAttachment("chance.pdf", "financial-report.pdf");
+
+$mail_manager = \Simp\Mail\Mail\MailManager::mailManager('mail_server_one');
+$mail_manager->addEnvelope($envelope)->processEnvelopes();
 ```
 
 ---
